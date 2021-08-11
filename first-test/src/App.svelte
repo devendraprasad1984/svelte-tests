@@ -1,30 +1,19 @@
 <script>
-	export let name;
+    export let name, age;
+    const changeAge = (num) => {
+        age = age + num
+    }
 </script>
-
-<main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-</main>
-
 <style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
-
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
+    h1 {
+        color: var(--primary-color);
+    }
 </style>
+<div class="container">
+    <div class="card">
+        <h1>Hello {name}!</h1>
+        <h3>i am {age} yrs old</h3>
+        <button class="btn btn-primary" on:click={()=>changeAge(1)}>+1</button>
+        <button class="btn btn-danger" on:click={()=>changeAge(-1)}>-1</button>
+    </div>
+</div>
