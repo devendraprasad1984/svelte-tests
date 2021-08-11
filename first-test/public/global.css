@@ -47,6 +47,10 @@ img {
 	overflow: hidden;
 	padding: 0 2rem;
 }
+.col{
+	display: flex;
+	flex-direction: column;
+}
 
 /* Text Styles*/
 .x-large {
@@ -295,7 +299,10 @@ img {
 
 /* Forms */
 input {
-	margin: 1.2rem 0;
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	box-sizing: border-box;
 }
 
 .form-text {

@@ -1,5 +1,6 @@
 <script>
-    import NameAge from './components/nameAge.svelte'
+    import AddPerson from './components/people/addPerson.svelte'
+    import NameAge from './components/people/nameAge.svelte'
 
     export let appHeader
     let people = [
@@ -10,10 +11,17 @@
         {name: 'noob', age: 21},
         {name: 'deva ki adalat', age: 23},
     ]
+    const addPerson=(e)=>{
+        e.preventDefault()
+        let newPerson=e.detail
+        console.log('event emitted from add person', e.detail)
+        people=[...people, newPerson]
+    }
 </script>
 
 <div class="container">
     <h1 class="text-primary">{appHeader}</h1>
+    <AddPerson on:addperson={addPerson}/>
     {#each people as p}
         <NameAge {...p}/>
     {/each}
